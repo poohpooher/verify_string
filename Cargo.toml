@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "invisible_generate",
+    "verify_string"
+]
+resolver = "2"
