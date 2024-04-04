@@ -8,6 +8,6 @@ pub use word::*;
 
 use dyn_clone::DynClone;
 
-pub trait Verifier: DynClone {
+pub trait Verifier: DynClone + Send + Sync {
     fn verify(&self, name: &str) -> Result<(), anyhow::Error>;
 }

@@ -2,7 +2,7 @@ use log::error;
 use crate::Verifier;
 
 #[derive(Default)]
-pub struct VerifyString{
+pub struct VerifyString {
     pub verifies : Vec<Box<dyn Verifier>>
 }
 

@@ -1,6 +1,6 @@
 [package]
 name = "verify_string"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["poohpooher <poohpooher@gmail.com>"]
 description = "A library for verifying strings."
