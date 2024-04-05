@@ -13,10 +13,6 @@ impl VerifyString {
         self
     }
 
-    pub fn build(self) -> Result<Self, anyhow::Error> {
-        Ok(self)
-    }
-
     pub fn verify(&self, name: &str) -> bool {
         for verifier in &self.verifies {
             if let Err(e) = verifier.verify(name) {

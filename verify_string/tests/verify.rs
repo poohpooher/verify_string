@@ -136,7 +136,7 @@ mod test_verify {
             .with_verifier(length)
             .with_verifier(start_end)
             .with_verifier(not_start_end)
-            .with_verifier(profanity).build().expect("verifier build fail");
+            .with_verifier(profanity);
 
         // valid string
         assert!(verifier.verify("Mason"));
