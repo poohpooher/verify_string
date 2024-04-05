@@ -132,12 +132,11 @@ mod test_verify {
             .build()
             .expect("build profanity rule");
 
-        let mut verifier = VerifyString::default();
-        verifier
+        let verifier = VerifyString::default()
             .with_verifier(length)
             .with_verifier(start_end)
             .with_verifier(not_start_end)
-            .with_verifier(profanity);
+            .with_verifier(profanity).build().expect("verifier build fail");
 
         // valid string
         assert!(verifier.verify("Mason"));

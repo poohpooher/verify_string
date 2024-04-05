@@ -8,9 +8,13 @@ pub struct VerifyString {
 
 
 impl VerifyString {
-    pub fn with_verifier(&mut self, verifier: impl Verifier + 'static) -> &mut Self {
+    pub fn with_verifier(mut self, verifier: impl Verifier + 'static) -> Self {
         self.verifies.push(Box::new(verifier));
         self
+    }
+
+    pub fn build(self) -> Result<Self, anyhow::Error> {
+        Ok(self)
     }
 
     pub fn verify(&self, name: &str) -> bool {
